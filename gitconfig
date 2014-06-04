@@ -6,7 +6,7 @@
   ff = only
 
 [rebase]
-  autoresquash = true
+  autosquash = true
 
 [core]
   editor = vim
@@ -24,12 +24,12 @@
   br = branch
   sta = stash
   gr = log --graph --date-order -C -M --pretty=format:\"%Cblue%h%Creset %Cgreen[%ad]%Creset (%an) %Cgreen%d%Creset %s\" --all --date=short
+  fixup = !sh -c 'git commit -m \"fixup! $(git log -1 --format='\\''%s'\\'' $@)\"' -
+  squash = !sh -c 'git commit -m \"squash! $(git log -1 --format='\\''%s'\\'' $@)\"' -
+  ri = rebase -i
 
 [apply]
   whitespace =nowarn
-
-[format]
-  pretty = %Cblue%h%Creset %Cgreen[%ar]%Creset (%an) %s
 
 [color]
   ui = auto
@@ -52,3 +52,5 @@
   added = yellow
   changed = green
   untracked = cyan
+[branch]
+	autosetuprebase = always
