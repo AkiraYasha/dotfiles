@@ -28,6 +28,7 @@ autocmd BufNewFile,BufRead Berksfile set ft=ruby
 autocmd BufNewFile,BufRead Gemfile set ft=ruby
 autocmd BufNewFile,BufRead Vagrantfile set ft=ruby
 autocmd BufNewFile,BufRead Rakefile set ft=ruby
+autocmd BufNewFile,BufRead Thorfile set ft=ruby
 
 " CamelCaseMotion
 map <silent> w <Plug>CamelCaseMotion_w
