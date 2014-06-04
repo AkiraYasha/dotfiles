@@ -38,7 +38,7 @@ PS1='%B%F{red}%(?..%? )%b %B%40<..<%~%<< %b$(git_remote_prompt) %F{cyan}$(git_pr
 RPROMPT='$(git_prompt_status)'
 
 # Aliases
-function mountAndroid { hdiutil attach ~/kitkat.dmg.sparseimage -mountpoint /Volumes/kitkat; }
+function mountAndroid { hdiutil attach ~/android.dmg.sparseimage -mountpoint /Volumes/android; }
 alias ll='ls -l'
 
 alias ping='grc ping'
@@ -47,6 +47,7 @@ alias netstat='grc netstat'
 alias diff='grc diff'
 alias dig='grc dig'
 alias ps='grc ps'
+alias chef='cd ~/src/chef-gce'
 
 alias grunt='nocorrect grunt'
 alias logcat='nocorrect logcat'
