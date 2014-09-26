@@ -56,6 +56,7 @@ alias gradle='nocorrect gradle'
 # Add ssh keys
 ssh-add -K ~/.ssh/vagrant > /dev/null 2>&1
 ssh-add -K ~/.ssh/ops.pem > /dev/null 2>&1
+ssh-add -K ~/.ssh/ops-us-west1.pem > /dev/null 2>&1
 
 # Google Cloud SDK
 source ~/bin/google-cloud-sdk/path.zsh.inc
