@@ -58,10 +58,6 @@ ssh-add -K ~/.ssh/vagrant > /dev/null 2>&1
 ssh-add -K ~/.ssh/ops.pem > /dev/null 2>&1
 ssh-add -K ~/.ssh/ops-us-west1.pem > /dev/null 2>&1
 
-# Google Cloud SDK
-source ~/bin/google-cloud-sdk/path.zsh.inc
-source ~/bin/google-cloud-sdk/completion.zsh.inc
-
 # pyenv
 eval "$(pyenv init -)"
 
@@ -74,3 +70,5 @@ eval "$(nodenv init -)"
 # Use local bins
 export PATH=~/bin:$PATH
 export PATH=bin:$PATH
+
+jdk 1.8
