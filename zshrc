@@ -64,9 +64,6 @@ eval "$(pyenv init -)"
 # rbenv
 eval "$(rbenv init -)"
 
-# nodenv
-eval "$(nodenv init -)"
-
 # Use local bins
 export PATH=~/bin:$PATH
 export PATH=bin:$PATH
