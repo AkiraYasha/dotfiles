@@ -1,3 +1,12 @@
+# Reset Path
+# Hack to prevent new instances of zsh from adding to $PATH, we should always handle PATH from a default state
+export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
+
+# Show a fortune
+echo ""
+fortune
+echo ""
+
 # Load grml
 source ~/.zshrc.grml
 
@@ -18,10 +27,6 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 rm -f ~/.zcompdump; compinit
 
 # Functions
-function removeFromPath {
-    export PATH=$(echo $PATH | sed -E -e "s;:$1;;" -e "s;$1:?;;")
-}
-
 function jdk {
     if [ $# -ne 0 ]; then
         DESIRED_JAVA_HOME=`/usr/libexec/java_home -v $@`
