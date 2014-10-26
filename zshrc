@@ -12,7 +12,7 @@ source ~/.zshrc.grml
 
 # Load plugins
 source ~/.zsh/git.inc
-source ~/.zsh/ctso.inc
+source ~/.zsh/commands.inc
 
 # Load zsh-syntax-highlighting
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
