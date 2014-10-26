@@ -1,6 +1,6 @@
 # Reset Path
 # Hack to prevent new instances of zsh from adding to $PATH, we should always handle PATH from a default state
-export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 
 # Show a fortune
 echo ""
