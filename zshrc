@@ -10,6 +10,9 @@ echo ""
 # Load grml
 source ~/.zshrc.grml
 
+# Load user specific stuff and things
+source ~/.${USER}.zsh
+
 # Load plugins
 source ~/.zsh/git.inc
 source ~/.zsh/commands.inc
@@ -52,16 +55,11 @@ alias netstat='grc netstat'
 alias diff='grc diff'
 alias dig='grc dig'
 alias ps='grc ps'
-alias chef='cd ~/src/chef-gce'
+alias chef='cd ~/src/chef-v2'
 
 alias grunt='nocorrect grunt'
 alias logcat='nocorrect logcat'
 alias gradle='nocorrect gradle'
-
-# Add ssh keys
-ssh-add -K ~/.ssh/vagrant > /dev/null 2>&1
-ssh-add -K ~/.ssh/ops.pem > /dev/null 2>&1
-ssh-add -K ~/.ssh/ops-us-west1.pem > /dev/null 2>&1
 
 # pyenv
 eval "$(pyenv init -)"

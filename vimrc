@@ -19,6 +19,8 @@ Plugin 'groenewege/vim-less'
 "Plugin 'godlygeek/tabular'
 Plugin 'koron/nyancat-vim'
 Plugin 'pangloss/vim-javascript'
+Plugin 'markcornick/vim-terraform'
+Plugin 'vim-ruby/vim-ruby'
 
 " Syntastic
 let g:syntastic_html_tidy_ignore_errors = ['trimming empty <p>', 'trimming empty <dt>', 'trimming empty <span>', 'trimming empty <i>', '<form> lacks "action" attribute', 'unescaped & which should be written as &amp;', '<input> attribute "type" has invalid value "email"', '<img> lacks "src" attribute']
@@ -29,6 +31,7 @@ autocmd BufNewFile,BufRead Gemfile set ft=ruby
 autocmd BufNewFile,BufRead Vagrantfile set ft=ruby
 autocmd BufNewFile,BufRead Rakefile set ft=ruby
 autocmd BufNewFile,BufRead Thorfile set ft=ruby
+autocmd BufNewFile,BufRead *.tf set ft=terraform
 
 " CamelCaseMotion
 map <silent> w <Plug>CamelCaseMotion_w
