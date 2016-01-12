@@ -1,6 +1,6 @@
 function git_remote_prompt() {
   prompt_info=$(git_prompt_info) || return
-  echo "%F{blue}[%F{cyan}$prompt_info%f$(git_remote_status)%F{blue}]%f"
+  echo "%F{135}[%F{147}$prompt_info%f$(git_remote_status)%F{135}]%f"
 }
 
 # get the name of the branch we are on

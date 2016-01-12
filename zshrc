@@ -19,6 +19,11 @@ source ~/.zsh/commands.inc
 
 # Load zsh-syntax-highlighting
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+ZSH_HIGHLIGHT_STYLES[command]='fg=147'
+ZSH_HIGHLIGHT_STYLES[builtin]='fg=147'
+ZSH_HIGHLIGHT_STYLES[alias]='fg=147'
+ZSH_HIGHLIGHT_STYLES[function]='fg=147'
+ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=197'
 
 # Disable autocomplete
 unsetopt correct_all
@@ -42,7 +47,7 @@ function jdk {
 # Prompt
 prompt off
 setopt PROMPT_SUBST
-PS1='%B%F{red}%(?..%? )%b %B%40<..<%~%<< %b$(git_remote_prompt) %F{cyan}$(git_prompt_short_sha)%f %(!.#.») '
+PS1='%B%F{red}%(?..%? )%b %B%40<..<%~%<< %b$(git_remote_prompt) %F{147}$(git_prompt_short_sha)%f %(!.#.») '
 RPROMPT='$(git_prompt_status)'
 
 # Aliases
