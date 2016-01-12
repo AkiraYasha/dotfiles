@@ -2,6 +2,11 @@
 # Hack to prevent new instances of zsh from adding to $PATH, we should always handle PATH from a default state
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin
 
+# Allow editing of command in $EDITOR with ctrl+x ctrl+e
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey '\C-x\C-e' edit-command-line
+
 # Show a fortune
 echo ""
 fortune
@@ -14,75 +19,31 @@ source ~/.zshrc.grml
 source ~/.${USER}.zsh
 
 # Load plugins
-source ~/.zsh/git.inc
-source ~/.zsh/commands.inc
+source ~/.zsh/functions.zsh
+source ~/.zsh/completions/init.zsh
 
-# Load zsh-syntax-highlighting
+source ~/.zsh/plugins/vim_mode.zsh
+source ~/.zsh/plugins/aliases.zsh
+source ~/.zsh/plugins/git.zsh
+source ~/.zsh/plugins/grc.zsh
+source ~/.zsh/plugins/rbenv.zsh
+source ~/.zsh/plugins/pyenv.zsh
+source ~/.zsh/plugins/nodenv.zsh
+source ~/.zsh/plugins/gitignore.zsh
+source ~/.zsh/plugins/json.zsh
+source ~/.zsh/plugins/thefuck.zsh
+source ~/.zsh/plugins/spssh.zsh
+
+source ~/.zsh/plugins/emoji/emoji.zsh
+
+# syntax highlighting
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# purple
-ZSH_HIGHLIGHT_STYLES[command]='fg=147'
-ZSH_HIGHLIGHT_STYLES[builtin]='fg=147'
-ZSH_HIGHLIGHT_STYLES[alias]='fg=147'
-ZSH_HIGHLIGHT_STYLES[function]='fg=147'
-
-# red
-ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=197'
-
-# yellow
-ZSH_HIGHLIGHT_STYLES[double-quoted-argument]='fg=228'
-ZSH_HIGHLIGHT_STYLES[single-quoted-argument]='fg=228'
-
-# blue
-ZSH_HIGHLIGHT_STYLES[globbing]='fg=159'
-
-# Disable autocomplete
-unsetopt correct_all
-unsetopt correct
-
-# Completions
-setopt menu_complete
-fpath=(/usr/local/share/zsh-completions $fpath)
-rm -f ~/.zcompdump; compinit
-
-# Functions
-function jdk {
-    if [ $# -ne 0 ]; then
-        DESIRED_JAVA_HOME=`/usr/libexec/java_home -v $@`
-        if [ $? -eq 0 ]; then
-            export JAVA_HOME="${DESIRED_JAVA_HOME}"
-        fi
-    fi
-}
+source ~/.zsh/syntax-colors.zsh
 
 # Prompt
 prompt off
 setopt PROMPT_SUBST
 PS1='%B%F{197}%(?..%?)%b %F{254}%40<..<%~%<< $(git_remote_prompt) %F{147}$(git_prompt_short_sha)%f %(!.#.$) '
-
-# Aliases
-alias ll='ls -l'
-
-alias ping='grc ping'
-alias traceroute='grc traceroute'
-alias netstat='grc netstat'
-alias diff='grc diff'
-alias dig='grc dig'
-alias ps='grc ps'
-alias chef='cd ~/src/chef-v2'
-
-alias grunt='nocorrect grunt'
-alias logcat='nocorrect logcat'
-alias gradle='nocorrect gradle'
-
-# pyenv
-eval "$(pyenv init -)"
-
-# rbenv
-eval "$(rbenv init -)"
-
-# nodenv
-eval "$(nodenv init -)"
 
 # Use local bins
 export PATH=~/bin:$PATH
