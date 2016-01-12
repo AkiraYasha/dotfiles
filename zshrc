@@ -19,11 +19,22 @@ source ~/.zsh/commands.inc
 
 # Load zsh-syntax-highlighting
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# purple
 ZSH_HIGHLIGHT_STYLES[command]='fg=147'
 ZSH_HIGHLIGHT_STYLES[builtin]='fg=147'
 ZSH_HIGHLIGHT_STYLES[alias]='fg=147'
 ZSH_HIGHLIGHT_STYLES[function]='fg=147'
+
+# red
 ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=197'
+
+# yellow
+ZSH_HIGHLIGHT_STYLES[double-quoted-argument]='fg=228'
+ZSH_HIGHLIGHT_STYLES[single-quoted-argument]='fg=228'
+
+# blue
+ZSH_HIGHLIGHT_STYLES[globbing]='fg=159'
 
 # Disable autocomplete
 unsetopt correct_all
@@ -47,11 +58,9 @@ function jdk {
 # Prompt
 prompt off
 setopt PROMPT_SUBST
-PS1='%B%F{red}%(?..%? )%b %B%40<..<%~%<< %b$(git_remote_prompt) %F{147}$(git_prompt_short_sha)%f %(!.#.») '
-RPROMPT='$(git_prompt_status)'
+PS1='%B%F{197}%(?..%?)%b %F{254}%40<..<%~%<< $(git_remote_prompt) %F{147}$(git_prompt_short_sha)%f %(!.#.$) '
 
 # Aliases
-function mountAndroid { hdiutil attach ~/android.dmg.sparseimage -mountpoint /Volumes/android; }
 alias ll='ls -l'
 
 alias ping='grc ping'

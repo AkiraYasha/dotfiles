@@ -1,6 +1,6 @@
 function git_remote_prompt() {
   prompt_info=$(git_prompt_info) || return
-  echo "%F{135}[%F{147}$prompt_info%f$(git_remote_status)%F{135}]%f"
+  echo "%F{135}(%F{147}$prompt_info%f$(git_remote_status)%F{135})%f"
 }
 
 # get the name of the branch we are on
@@ -121,7 +121,7 @@ function git_remote_status() {
 
       if [ $ahead -gt 0 ]
       then
-        status_str="$status_str%F{green}+${ahead// /}"
+        status_str="$status_str%F{191}+${ahead// /}"
       fi
 
       if [ $ahead -gt 0 ] && [ $behind -gt 0 ]
@@ -131,7 +131,7 @@ function git_remote_status() {
 
       if [ $behind -gt 0 ]
       then
-        status_str="$status_str%F{red}-${behind// /}"
+        status_str="$status_str%F{197}-${behind// /}"
       fi
     fi
 
