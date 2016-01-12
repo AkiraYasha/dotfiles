@@ -4,6 +4,7 @@
 
 [merge]
   ff = only
+  tool = p4merge
 
 [rebase]
   autosquash = true
@@ -54,3 +55,12 @@
   untracked = cyan
 [branch]
 	autosetuprebase = always
+
+[mergetool "p4merge"]
+  cmd = p4merge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
+  keepTemporaries = false
+  trustExitCode = false
+  keepBackup = false
+
+[gitreview]
+  username = AkiraYasha
