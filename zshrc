@@ -16,7 +16,6 @@ source ~/.${USER}.zsh
 # Load plugins
 source ~/.zsh/git.inc
 source ~/.zsh/commands.inc
-source ~/.zsh/ssh-agent.inc
 
 # Load zsh-syntax-highlighting
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -67,6 +66,9 @@ eval "$(pyenv init -)"
 
 # rbenv
 eval "$(rbenv init -)"
+
+# nodenv
+eval "$(nodenv init -)"
 
 # Use local bins
 export PATH=~/bin:$PATH
