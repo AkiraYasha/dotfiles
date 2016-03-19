@@ -9,7 +9,7 @@ function git_current_branch() {
 
 function git_remote_prompt() {
   prompt_info=$(git_current_branch) || return
-  echo "%F{135}(%F{147}$prompt_info%f$(git_remote_status)%F{135})%f"
+  echo "%F{3}[%F{2}$prompt_info%f$(git_remote_status)%F{3}]%f"
 }
 
 # Formats prompt string for current git commit short SHA
@@ -26,7 +26,7 @@ function git_remote_status() {
 
     if [ $ahead -eq 0 ] && [ $behind -eq 0 ]
     then
-      status_str="%F{147}="
+      status_str="%F{2}="
     else
       status_str=""
 
@@ -42,7 +42,7 @@ function git_remote_status() {
 
       if [ $behind -gt 0 ]
       then
-        status_str="$status_str%F{197}-${behind// /}"
+        status_str="$status_str%F{1}-${behind// /}"
       fi
     fi
 
