@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<root>
+
+  <appdef>
+    <appname>MINECRAFT</appname>
+    <equal>net.java.openjdk.cmd</equal>
+  </appdef>
+
+  <replacementdef>
+    <replacementname>PC_STYLE_BINDINGS_IGNORE_APPS</replacementname>
+    <replacementvalue>
+      VIRTUALMACHINE,
+      REMOTEDESKTOPCONNECTION,
+      VNC,
+      TEAMVIEWER,
+      EMACS,
+      TERMINAL,
+      X11,
+      CITRIX_XEN_APP_VIEWER,
+      MINECRAFT
+    </replacementvalue>
+  </replacementdef>
+
+  <replacementdef>
+    <replacementname>PC_STYLE_BINDINGS_IGNORE_APPS_DESCRIPTION</replacementname>
+    <replacementvalue>
+      (Except in Virtual Machine, RDC, VNC, TeamViewer, EMACS, TERMINAL, X11, Citrix Viewer, Minecraft)
+    </replacementvalue>
+  </replacementdef>
+
+  <item>
+    <name>PC_STYLE_BINDINGS_IGNORE_APPS has been overwritten.</name>
+  </item>
+
+</root>
